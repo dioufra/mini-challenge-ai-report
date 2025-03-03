@@ -11,7 +11,7 @@ app = dash.Dash(__name__)
 server = app.server
 
 # Load the dataset
-train_data = pd.read_csv("/home/francois/Downloads/train.csv")
+train_data = pd.read_csv("train.csv")
 train_data.drop('Id', axis=1, inplace=True)
 
 # Feature Engineering
