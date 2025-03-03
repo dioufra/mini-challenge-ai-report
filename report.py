@@ -7,9 +7,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-app = dash.Dash(__name__)
-server = app.server
-
 # Load the dataset
 train_data = pd.read_csv("train.csv")
 train_data.drop('Id', axis=1, inplace=True)
@@ -40,6 +37,7 @@ selected_features = [
 
 # Initialize Dash app
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 app.title = "Feature Selection Analysis"
 
 app.layout = dbc.Container([
